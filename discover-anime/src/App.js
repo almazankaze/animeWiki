@@ -1,14 +1,30 @@
 import "./App.css";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SideNav from "./components/SideNav";
 import Home from "./pages/Home";
+import AnimePage from "./pages/AnimePage";
+import Error from "./pages/Error";
+import Header from "./components/Header";
 
 function App() {
   return (
     <main>
       <section className="glass">
-        <SideNav />
-        <Home />
+        <Router>
+          <SideNav />
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/anime/:id">
+              <AnimePage />
+            </Route>
+            <Route exact path="*">
+              <Error />
+            </Route>
+          </Switch>
+        </Router>
       </section>
     </main>
   );

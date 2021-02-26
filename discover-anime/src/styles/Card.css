@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  height: 10rem;
+  width: 8rem;
+  display: flex;
+  border-radius: 1rem;
+  margin: 2rem 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.card img {
+  object-fit: cover;
+  width: 8rem;
+  height: 10rem;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  border-radius: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  height: 3.5rem;
+  width: 8rem;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 12rem;
+    width: 10rem;
+  }
+
+  .card img {
+    width: 10rem;
+    height: 12rem;
+  }
+
+  .overlay {
+    height: 3.5rem;
+    width: 10rem;
+  }
+}

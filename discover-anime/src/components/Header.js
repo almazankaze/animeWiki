@@ -1,9 +1,11 @@
 import "../styles/Header.css";
+import SearchForm from "./SearchForm";
 
 const Header = () => {
   return (
     <header className="header">
-      <h3>hello</h3>
+      <h1>AniSearch</h1>
+      <SearchForm />
     </header>
   );
 };

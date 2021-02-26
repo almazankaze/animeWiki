@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+}
+
+.search input {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: none;
+  width: 100%;
+  padding: 0.5rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.search button {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: #426696;
+  padding: 6px 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .search {
+    padding-top: 0.75rem;
+  }
+  .search input {
+    width: 100%;
+  }
+}
