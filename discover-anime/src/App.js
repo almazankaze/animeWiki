@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/anime/:id">
+            <Route path="/animepage/:id">
               <AnimePage />
             </Route>
             <Route exact path="*">

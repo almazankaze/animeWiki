@@ -39,6 +39,7 @@
   position: absolute;
   bottom: 0.5rem;
   left: 1rem;
+  color: white;
 }
 
 @media (min-width: 768px) {

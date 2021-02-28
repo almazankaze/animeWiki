@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import SearchForm from "./SearchForm";
 
 const Header = () => {
   return (
     <header className="header">
-      <h1>AniSearch</h1>
+      <Link to="/">
+        <h1 className="logo">AniSearch</h1>
+      </Link>
       <SearchForm />
     </header>
   );

@@ -1,10 +1,15 @@
 import "../styles/SearchForm.css";
 
 const SearchForm = () => {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <div className="search">
-      <input type="text" />
-      <button>hello</button>
+      <form className="search-form" onSubmit={handleSubmit}>
+        <input type="text" name="name" id="name" />
+      </form>
     </div>
   );
 };

@@ -1,0 +1,83 @@
+.notFound {
+  padding-top: 2.5rem;
+  text-align: center;
+}
+
+.anime-card {
+  border-radius: 1rem;
+  margin: 1rem 1.5rem;
+  color: white;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+}
+
+.anime {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.img-card {
+}
+
+.img-card img {
+  max-width: 60%;
+  min-width: 16rem;
+  max-height: 60%;
+  min-height: 18rem;
+  border-radius: 1rem;
+}
+
+.info-card {
+  text-align: left;
+}
+
+.info-card p {
+  font-weight: bold;
+  color: #658ec6;
+  opacity: 0.8;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+}
+
+.info-data {
+  padding: 0.25rem 1rem;
+}
+
+.synopsis {
+  padding: 1rem;
+  font-weight: bold;
+  color: #658ec6;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .notFound,
+  .anime {
+    margin-left: 200px;
+  }
+
+  .img-card {
+    margin-right: 0;
+  }
+
+  .anime-card {
+    height: 18rem;
+    width: 16rem;
+  }
+
+  .info-card {
+    width: 34.25rem;
+  }
+
+  .summary-card {
+    min-height: 10rem;
+    height: fit-content;
+    width: 51.75rem;
+  }
+}

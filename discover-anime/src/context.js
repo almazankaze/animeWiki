@@ -16,7 +16,7 @@ const AppProvider = ({ children }) => {
       const data = await resp.json();
 
       const anime = data.data;
-      console.log(anime);
+      // console.log(anime);
       dispatch({ type: "DISPLAY_ITEMS", payload: anime });
     } catch (error) {
       dispatch({ type: "ERROR" });
