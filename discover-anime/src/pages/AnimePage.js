@@ -10,6 +10,8 @@ const AnimePage = () => {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
+    console.log(id);
+
     setLoading(true);
     async function fetchAnime() {
       try {

@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+.anime {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .anime-card {
   border-radius: 1rem;
   margin: 1rem 1.5rem;
@@ -13,16 +20,6 @@
     rgba(255, 255, 255, 0.5)
   );
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-}
-
-.anime {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.img-card {
 }
 
 .img-card img {

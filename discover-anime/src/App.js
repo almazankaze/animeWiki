@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AnimePage from "./pages/AnimePage";
 import Error from "./pages/Error";
 import Header from "./components/Header";
+import Results from "./pages/Results";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/animepage/:id">
+            <Route exact path="/results/:searchName">
+              <Results />
+            </Route>
+            <Route path="/page/:id">
               <AnimePage />
             </Route>
             <Route exact path="*">

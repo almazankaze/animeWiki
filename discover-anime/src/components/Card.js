@@ -4,7 +4,7 @@ import "../styles/Card.css";
 const Card = ({ id, attributes }) => {
   return (
     <div className="card">
-      <Link to={`/animepage/${id}`}>
+      <Link to={`/page/${id}`}>
         <img
           src={attributes.posterImage.small}
           alt={attributes.canonicalTitle}

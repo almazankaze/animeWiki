@@ -1,4 +1,4 @@
-import "../styles/Home.css";
+import "../styles/Results.css";
 import { useGlobalContext } from "../context";
 import Loader from "../components/Loader";
 import Card from "../components/Card";
@@ -10,7 +10,7 @@ const Home = () => {
     return <Loader />;
   } else {
     return (
-      <section className="home">
+      <section className="container">
         <div className="results">
           {animeDB.map((anime) => (
             <Card
