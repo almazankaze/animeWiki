@@ -11,7 +11,7 @@ const Card = ({ id, attributes }) => {
         />
         <div className="overlay"></div>
         <div className="bottom-text">
-          <p>{attributes.canonicalTitle}</p>
+          <p className="limit-text">{attributes.canonicalTitle}</p>
         </div>
       </Link>
     </div>

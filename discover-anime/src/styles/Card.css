@@ -26,8 +26,8 @@
 .overlay {
   position: absolute;
   background-color: black;
-  opacity: 0.5;
-  height: 3.5rem;
+  opacity: 0.4;
+  height: 2rem;
   width: 8rem;
   bottom: 0;
   left: 0;
@@ -38,7 +38,7 @@
 .bottom-text {
   position: absolute;
   bottom: 0.5rem;
-  left: 1rem;
+  left: 0.5rem;
   color: white;
 }
 
@@ -54,7 +54,11 @@
   }
 
   .overlay {
-    height: 3.5rem;
+    height: 2rem;
     width: 10rem;
+  }
+
+  .bottom-text {
+    left: 1rem;
   }
 }
