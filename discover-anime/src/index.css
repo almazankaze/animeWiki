@@ -15,6 +15,7 @@ body {
 h1 {
   color: #426696;
   font-weight: 600;
+  font-size: 1rem;
   opacity: 0.8;
 }
 h2 {
@@ -37,7 +38,7 @@ code {
 @media (min-width: 768px) {
   h1 {
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4rem;
   }
   h2 {
     font-weight: 500;
@@ -54,4 +55,10 @@ code {
   display: -webkit-box;
   -webkit-line-clamp: 1; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.page-divider {
+  border: 0;
+  margin: 0.75rem 1rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }

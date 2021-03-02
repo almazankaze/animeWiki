@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import SearchForm from "./SearchForm";
 
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/" className="logo">
-        <h1>AniSearch</h1>
-      </Link>
+      <div className="logo">
+        <h1>Discover New Anime</h1>
+      </div>
       <SearchForm />
     </header>
   );

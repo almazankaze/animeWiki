@@ -6,6 +6,8 @@ import AnimePage from "./pages/AnimePage";
 import Error from "./pages/Error";
 import Header from "./components/Header";
 import Results from "./pages/Results";
+import About from "./pages/About";
+import AniUpcoming from "./pages/AniUpcoming";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
             </Route>
             <Route path="/page/:id">
               <AnimePage />
+            </Route>
+            <Route path="/aniUp">
+              <AniUpcoming />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
             <Route exact path="*">
               <Error />
