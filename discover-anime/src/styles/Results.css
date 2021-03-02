@@ -5,10 +5,19 @@
   margin: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 320px) {
+  .results {
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 768px) {
+  .results {
+    justify-content: center;
+  }
   .container {
     margin-left: 200px;
   }

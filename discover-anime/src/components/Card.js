@@ -6,7 +6,7 @@ const Card = ({ id, attributes }) => {
     <div className="card">
       <Link to={`/page/${id}`}>
         <img
-          src={attributes.posterImage.small}
+          src={attributes.posterImage.large}
           alt={attributes.canonicalTitle}
         />
         <div className="overlay"></div>

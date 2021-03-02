@@ -5,8 +5,8 @@ import SearchForm from "./SearchForm";
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/">
-        <h1 className="logo">AniSearch</h1>
+      <Link to="/" className="logo">
+        <h1>AniSearch</h1>
       </Link>
       <SearchForm />
     </header>

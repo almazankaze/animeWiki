@@ -1,7 +1,8 @@
 import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "./reducer";
 
-const url = "https://kitsu.io/api/edge/trending/anime";
+const url =
+  "https://kitsu.io/api/edge/anime?page[limit]=20&sort=popularityRank";
 const AppContext = React.createContext();
 
 const initialState = {

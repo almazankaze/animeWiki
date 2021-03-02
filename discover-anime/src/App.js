@@ -12,8 +12,9 @@ function App() {
     <main>
       <section className="glass">
         <Router>
-          <SideNav />
           <Header />
+          <SideNav />
+
           <Switch>
             <Route exact path="/">
               <Home />

@@ -1,20 +1,6 @@
-.notFound {
-  padding-top: 2.5rem;
-  text-align: center;
-}
-
-.anime {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .anime-card {
   border-radius: 1rem;
   margin: 0.5rem;
-  width: 18rem;
-  height: 20rem;
   color: white;
   background: linear-gradient(
     to left top,
@@ -24,33 +10,64 @@
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 }
 
+.notFound {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  padding-top: 2.5rem;
+}
+
+.anime {
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "pic"
+    "info"
+    "sum"
+    "side";
+}
+
+.img-card {
+  margin: 0.5rem;
+  max-width: 80%;
+  justify-self: center;
+  grid-area: pic;
+}
+
 .img-card img {
-  max-width: 60%;
-  min-width: 18rem;
-  max-height: 60%;
-  min-height: 20rem;
   border-radius: 1rem;
+  max-width: 100%;
 }
 
 .info-card {
+  grid-area: info;
   text-align: left;
+  padding: 1rem;
+}
+
+.info-card span {
+  margin-right: 1rem;
 }
 
 .info-card p {
   font-weight: bold;
+  line-height: 1.8;
   color: #658ec6;
   opacity: 0.8;
   text-transform: capitalize;
   margin-top: 0.5rem;
 }
 
-.info-data {
-  padding: 0.25rem 1rem;
+.anime-link {
+  text-decoration: none;
 }
 
 .summary-card {
-  min-height: 20rem;
-  height: fit-content;
+  grid-area: sum;
 }
 
 .synopsis {
@@ -60,52 +77,25 @@
   opacity: 0.8;
 }
 
-@media (min-width: 375px) {
-  .anime-card {
-    height: 24rem;
-    width: 22rem;
-  }
-
-  .img-card img {
-    min-width: 22rem;
-    min-height: 24rem;
-  }
-
-  .summary-card {
-    min-height: 20rem;
-    height: fit-content;
-  }
+.similar-card {
+  grid-area: side;
 }
 
-@media (min-width: 768px) {
-  .notFound,
+@media only screen and (min-width: 768px) {
+  .notFound {
+    margin-left: 200px;
+  }
+
   .anime {
     margin-left: 200px;
-    justify-content: flex-start;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "pic info info side"
+      "sum sum sum side";
   }
 
   .img-card {
-    margin-right: 0;
-  }
-
-  .img-card img {
-    min-width: 18rem;
-    min-height: 20rem;
-  }
-
-  .anime-card {
-    height: 20rem;
-    width: 18rem;
-    margin: 0.75rem;
-  }
-
-  .info-card {
-    width: 36rem;
-  }
-
-  .summary-card {
-    min-height: 10rem;
-    height: fit-content;
-    width: 55.5rem;
+    max-width: 100%;
   }
 }

@@ -42,20 +42,36 @@
   color: white;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 375px) {
   .card {
-    height: 12rem;
-    width: 10rem;
+    height: 11rem;
+    width: 9rem;
   }
 
   .card img {
-    width: 10rem;
-    height: 12rem;
+    width: 9rem;
+    height: 11rem;
+  }
+
+  .overlay {
+    width: 9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 16rem;
+    width: 14rem;
+  }
+
+  .card img {
+    width: 14rem;
+    height: 16rem;
   }
 
   .overlay {
     height: 2rem;
-    width: 10rem;
+    width: 14rem;
   }
 
   .bottom-text {
