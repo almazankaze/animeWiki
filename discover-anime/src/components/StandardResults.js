@@ -1,22 +1,18 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import Card from "../components/Card";
 import "../styles/Results.css";
 
-const ResultsList = () => {
+const StandardResults = ({ type, status }) => {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
-  const { searchName } = useParams();
-  const searchURL = "https://kitsu.io/api/edge/anime?";
+  const url = `https://kitsu.io/api/edge/${type}?page[limit]=20&filter[status]=${status}&sort=popularityRank`;
 
   useEffect(() => {
     setLoading(true);
     const fetchResults = async () => {
       try {
-        const resp = await fetch(
-          searchURL + encodeURI("filter[text]=" + searchName)
-        );
+        const resp = await fetch(encodeURI(url));
         const data = await resp.json();
 
         if (data) {
@@ -31,7 +27,7 @@ const ResultsList = () => {
     };
 
     fetchResults();
-  }, [searchName]);
+  }, [url]);
 
   if (loading) {
     return <Loader />;
@@ -51,4 +47,4 @@ const ResultsList = () => {
   }
 };
 
-export default ResultsList;
+export default StandardResults;

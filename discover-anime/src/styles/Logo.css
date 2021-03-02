@@ -1,0 +1,23 @@
+.web-logo {
+  display: flex;
+  align-self: flex-start;
+  font-size: 24px;
+  margin: 0;
+  text-decoration: underline;
+  color: #426696;
+}
+
+.web-logo h5 {
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .web-logo {
+    margin: 1.5rem 1rem;
+    font-size: 30px;
+  }
+
+  .web-logo h5 {
+    padding-left: 0.5rem;
+  }
+}

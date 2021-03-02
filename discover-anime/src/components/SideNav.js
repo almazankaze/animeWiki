@@ -1,21 +1,25 @@
 import "../styles/SideNav.css";
-import { Link, NavLink } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 
 const SideNav = () => {
   return (
     <nav className="sidenav">
-      <Link to="/" className="web-logo">
-        <FaSearch />
-        <h5>AniSearch</h5>
-      </Link>
+      <Logo />
       <div className="links">
         <hr className="sidebar-divider"></hr>
         <h3>Anime</h3>
         <NavLink exact={true} to="/" activeClassName="current" className="link">
           <h2>Popular</h2>
         </NavLink>
-        <NavLink to="/aniUp" activeClassName="current" className="link">
+        <NavLink to="/anime/ongoing" activeClassName="current" className="link">
+          <h2>Ongoing</h2>
+        </NavLink>
+        <NavLink
+          to="/anime/upcoming"
+          activeClassName="current"
+          className="link"
+        >
           <h2>Upcoming</h2>
         </NavLink>
 
@@ -23,6 +27,9 @@ const SideNav = () => {
         <h3>Manga</h3>
         <div className="link">
           <h2>Popular</h2>
+        </div>
+        <div className="link">
+          <h2>Ongoing</h2>
         </div>
         <div className="link">
           <h2>Upcoming</h2>

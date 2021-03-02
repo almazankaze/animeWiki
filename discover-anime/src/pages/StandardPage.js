@@ -1,10 +1,11 @@
 import React from "react";
+import StandardResults from "../components/StandardResults";
 
-const AniUpcoming = () => {
+const AniUpcoming = ({ type, status }) => {
   return (
     <section className="container">
       <hr className="page-divider"></hr>
-      <div className="results"></div>
+      <StandardResults type={type} status={status} />
     </section>
   );
 };

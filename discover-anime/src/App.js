@@ -7,7 +7,7 @@ import Error from "./pages/Error";
 import Header from "./components/Header";
 import Results from "./pages/Results";
 import About from "./pages/About";
-import AniUpcoming from "./pages/AniUpcoming";
+import StandardPage from "./pages/StandardPage";
 
 function App() {
   return (
@@ -27,8 +27,11 @@ function App() {
             <Route path="/page/:id">
               <AnimePage />
             </Route>
-            <Route path="/aniUp">
-              <AniUpcoming />
+            <Route path="/anime/ongoing">
+              <StandardPage type="anime" status="current" />
+            </Route>
+            <Route path="/anime/upcoming">
+              <StandardPage type="anime" status="upcoming" />
             </Route>
             <Route path="/about">
               <About />
