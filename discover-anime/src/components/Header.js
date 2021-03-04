@@ -33,7 +33,7 @@ const Header = () => {
         <SearchForm />
       </div>
 
-      <Modal />
+      <Modal isClicked={isClicked} closeMenu={closeMenu} />
     </header>
   );
 };

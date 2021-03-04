@@ -97,7 +97,7 @@ const AnimePage = () => {
           </p>
           <p>
             <span className="info-data">aired :</span>{" "}
-            {startDate + " - " + endDate}
+            {startDate + (endDate ? " - " + endDate : "")}
           </p>
           <p>
             <span className="info-data">rating :</span> {rating}

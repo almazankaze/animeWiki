@@ -35,6 +35,12 @@ const ResultsList = () => {
 
   if (loading) {
     return <Loader />;
+  } else if (results.length < 1) {
+    return (
+      <section className="notFound">
+        <h1 className="section-title">Anime not found...</h1>
+      </section>
+    );
   } else {
     return (
       <div className="results">
