@@ -45,7 +45,7 @@ code {
 
 .page-divider {
   border: 0;
-  margin: 0 1rem 1rem;
+  margin: 1rem 1rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -63,6 +63,6 @@ code {
   }
 
   .page-divider {
-    margin: 0.75rem 1rem 1rem;
+    margin: 0.75rem 1rem 0;
   }
 }

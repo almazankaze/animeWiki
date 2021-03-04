@@ -11,7 +11,6 @@ const Home = () => {
   } else {
     return (
       <section className="container">
-        <hr className="page-divider"></hr>
         <div className="results">
           {animeDB.map((anime) => (
             <Card

@@ -4,7 +4,6 @@ import "../styles/About.css";
 const About = () => {
   return (
     <section className="container">
-      <hr className="page-divider"></hr>
       <div className="about-content">
         <h2>
           Made for users to discover new anime to watch. It is a project made

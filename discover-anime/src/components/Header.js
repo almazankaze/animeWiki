@@ -32,6 +32,7 @@ const Header = () => {
 
         <SearchForm />
       </div>
+      <hr className="page-divider"></hr>
 
       <Modal isClicked={isClicked} closeMenu={closeMenu} />
     </header>

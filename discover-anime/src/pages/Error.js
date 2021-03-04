@@ -1,7 +1,7 @@
 import React from "react";
 
 const Error = () => {
-  return <div></div>;
+  return <section className="container"></section>;
 };
 
 export default Error;
