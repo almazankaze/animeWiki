@@ -42,6 +42,22 @@
   color: white;
 }
 
+.anipage-card {
+  height: 8rem;
+  width: 6rem;
+  margin: 1rem 0.5rem;
+}
+
+.anicard-overlay {
+  height: 2rem;
+  width: 6rem;
+}
+
+.anipage-card img {
+  height: 8rem;
+  width: 6rem;
+}
+
 @media only screen and (min-width: 375px) {
   .card {
     height: 11rem;
@@ -76,5 +92,21 @@
 
   .bottom-text {
     left: 1rem;
+  }
+
+  .anipage-card {
+    height: 8rem;
+    width: 6rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .anicard-overlay {
+    height: 2rem;
+    width: 6rem;
+  }
+
+  .anipage-card img {
+    height: 8rem;
+    width: 6rem;
   }
 }

@@ -49,6 +49,46 @@ code {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.center {
+}
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  padding: 0.375rem 0.75rem;
+  margin: 1rem;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  border: 2px solid #222;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+.btn:hover {
+  color: #fff;
+  background: #222;
+}
+
+.primary-btn {
+  background: hsl(205, 78%, 60%);
+  border-color: transparent;
+  content: hsl(205, 78%, 60%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.primary-btn:hover {
+  background: hsl(205, 88%, 23%);
+}
+
+.center {
+  padding: 70px 0;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   h1 {
     font-weight: 600;
@@ -64,5 +104,13 @@ code {
 
   .page-divider {
     margin: 0.75rem 1rem 0;
+  }
+
+  .container {
+    margin-left: 200px;
+  }
+
+  .notFound {
+    margin-left: 200px;
   }
 }

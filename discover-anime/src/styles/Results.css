@@ -19,11 +19,4 @@
   .results {
     justify-content: center;
   }
-  .container {
-    margin-left: 200px;
-  }
-
-  .notFound {
-    margin-left: 200px;
-  }
 }

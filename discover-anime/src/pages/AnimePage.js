@@ -4,45 +4,68 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loader";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
 
 const AnimePage = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [similar, setSimilar] = useState([]);
 
   useEffect(() => {
-    console.log(id);
-
     setLoading(true);
     async function fetchAnime() {
       try {
-        const response = await fetch(
-          `https://kitsu.io/api/edge/anime?filter[id]=${id}`
-        );
+        const [res1, res2] = await Promise.all([
+          fetch(
+            `https://kitsu.io/api/edge/anime?filter[id]=${id}`
+          ).then((response) => response.json()),
+          fetch(
+            `https://kitsu.io/api/edge/anime/${id}/categories`
+          ).then((response) => response.json()),
+        ]);
 
-        const data = await response.json();
-
-        if (data) {
+        if (res1) {
           const newAnime = {
-            name: data.data[0].attributes.canonicalTitle,
-            otherName: data.data[0].attributes.titles.en_jp,
-            jpName: data.data[0].attributes.titles.ja_jp,
-            rating: data.data[0].attributes.ageRatingGuide,
-            score: data.data[0].attributes.averageRating,
-            rank: data.data[0].attributes.popularityRank,
-            type: data.data[0].attributes.subtype,
-            epCount: data.data[0].attributes.episodeCount,
-            startDate: data.data[0].attributes.startDate,
-            endDate: data.data[0].attributes.endDate,
-            pic: data.data[0].attributes.posterImage.medium,
-            synopsis: data.data[0].attributes.synopsis,
-            trailer: data.data[0].attributes.youtubeVideoId,
+            name: res1.data[0].attributes.canonicalTitle,
+            otherName: res1.data[0].attributes.titles.en_jp,
+            jpName: res1.data[0].attributes.titles.ja_jp,
+            rating: res1.data[0].attributes.ageRatingGuide,
+            score: res1.data[0].attributes.averageRating,
+            rank: res1.data[0].attributes.popularityRank,
+            type: res1.data[0].attributes.subtype,
+            epCount: res1.data[0].attributes.episodeCount,
+            startDate: res1.data[0].attributes.startDate,
+            endDate: res1.data[0].attributes.endDate,
+            pic: res1.data[0].attributes.posterImage.medium,
+            synopsis: res1.data[0].attributes.synopsis,
+            trailer: res1.data[0].attributes.youtubeVideoId,
           };
           setResult(newAnime);
+
+          const categories = res2.data.slice(0, 3).map((category) => {
+            return category.attributes.slug;
+          });
+
+          // get anime that are similar to main one searched
+          const similarResp = await fetch(
+            encodeURI(
+              `https://kitsu.io/api/edge/anime?page[limit]=6&filter[categories]=${categories.toString()}&sort=popularityRank`
+            )
+          );
+          const similarData = await similarResp.json();
+
+          if (similarData) {
+            setSimilar(similarData.data);
+          } else {
+            setSimilar([]);
+          }
         } else {
           setResult(null);
         }
-      } catch (error) {}
+      } catch (error) {
+        setResult(null);
+      }
       setLoading(false);
     }
 
@@ -125,7 +148,19 @@ const AnimePage = () => {
           <p className="synopsis">{synopsis}</p>
         </div>
 
-        <div className="anime-card similar-card"></div>
+        <div className="anime-card similar-card">
+          <h2>Similar Anime</h2>
+          <div className="results">
+            {similar.map((anime) => (
+              <Card
+                key={anime.id}
+                id={anime.id}
+                attributes={anime.attributes}
+                type="anipage-card"
+              ></Card>
+            ))}
+          </div>
+        </div>
       </section>
     );
   }
