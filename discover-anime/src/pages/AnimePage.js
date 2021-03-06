@@ -43,14 +43,14 @@ const AnimePage = () => {
           };
           setResult(newAnime);
 
-          const categories = res2.data.slice(0, 3).map((category) => {
+          const categories = res2.data.slice(0, 2).map((category) => {
             return category.attributes.slug;
           });
 
           // get anime that are similar to main one searched
           const similarResp = await fetch(
             encodeURI(
-              `https://kitsu.io/api/edge/anime?page[limit]=6&filter[categories]=${categories.toString()}&sort=popularityRank`
+              `https://kitsu.io/api/edge/anime?page[limit]=8&filter[categories]=${categories.toString()}&sort=popularityRank`
             )
           );
           const similarData = await similarResp.json();

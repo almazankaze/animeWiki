@@ -8,7 +8,7 @@ const ResultsList = () => {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
   const { searchName } = useParams();
-  const searchURL = "https://kitsu.io/api/edge/anime?";
+  const searchURL = "https://kitsu.io/api/edge/anime?page[limit]=20&";
 
   useEffect(() => {
     setLoading(true);

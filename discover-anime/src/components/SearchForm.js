@@ -19,6 +19,7 @@ const SearchForm = () => {
           type="text"
           name="name"
           id="name"
+          placeholder="search..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
