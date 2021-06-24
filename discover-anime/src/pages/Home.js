@@ -10,6 +10,7 @@ const Home = () => {
   } else {
     return (
       <section className="main-content">
+        <h1 className="center heading-text">Currently Popular!</h1>
         <ul className="anime-card-collection">
           {animeDB.map((anime) => (
             <Card

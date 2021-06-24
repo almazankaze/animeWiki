@@ -94,11 +94,12 @@
     padding: 1rem;
     margin-left: 14rem;
     column-gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "pic info info side"
-      "sum sum sum side";
+      "pic info info"
+      "sum sum sum"
+      "side side side";
   }
 
   .img-card {
@@ -123,6 +124,22 @@
   }
 
   .similar-list > .cards-item {
-    width: 50%;
+    width: 33.333333%;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .info-card > p {
+    font-size: 1.5rem;
+  }
+
+  .synopsis {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 85rem) {
+  .similar-list > .cards-item {
+    width: 25%;
   }
 }

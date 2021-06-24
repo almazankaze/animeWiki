@@ -46,6 +46,7 @@ h2 {
 
 .main-content {
   margin-left: 0;
+  padding-top: 7rem;
 }
 
 .anime-card-collection {
@@ -55,7 +56,6 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-top: 7rem;
 }
 
 .limit-text {
@@ -98,21 +98,31 @@ h2 {
   background: hsl(205, 88%, 23%);
 }
 
+.heading-text {
+  display: block;
+}
+
+.center {
+  text-align: center;
+}
+
 .center-top {
   text-align: center;
   padding-top: 7rem;
 }
 
 @media only screen and (max-width: 25rem) {
-  .anime-card-collection,
-  .center-top {
+  .main-content {
     padding-top: 5rem;
+  }
+
+  .heading-text {
+    display: block;
   }
 }
 
 @media only screen and (min-width: 50rem) {
-  .anime-card-collection,
-  .center-top {
+  .main-content {
     padding-top: 9rem;
   }
 }
@@ -121,13 +131,14 @@ h2 {
 @media only screen and (min-width: 68.75rem) {
   .main-content {
     margin-left: 14rem;
-  }
-
-  .anime-card-collection {
     padding-top: 0;
   }
 
   .center-top {
     padding-top: 0;
+  }
+
+  .heading-text {
+    display: none;
   }
 }
