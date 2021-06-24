@@ -4,7 +4,6 @@
   width: 8rem;
   display: flex;
   border-radius: 1rem;
-  margin: 2rem 0.5rem;
   justify-content: space-between;
   align-items: center;
   color: white;
@@ -58,7 +57,25 @@
   width: 6rem;
 }
 
-@media only screen and (min-width: 375px) {
+.cards-item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .cards-item {
+    width: 33.333333%;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .cards-item {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 25rem) {
   .card {
     height: 11rem;
     width: 9rem;
@@ -72,9 +89,25 @@
   .overlay {
     width: 9rem;
   }
+
+  .anipage-card {
+    height: 10rem;
+    width: 8rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .anipage-card img {
+    height: 10rem;
+    width: 8rem;
+  }
+
+  .anicard-overlay {
+    height: 2rem;
+    width: 8rem;
+  }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .card {
     height: 16rem;
     width: 14rem;
@@ -95,9 +128,27 @@
   }
 
   .anipage-card {
+    height: 16rem;
+    width: 14rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .anicard-overlay {
+    height: 2rem;
+    width: 14rem;
+  }
+
+  .anipage-card img {
+    height: 16rem;
+    width: 14rem;
+  }
+}
+
+@media only screen and (min-width: 68.75rem) {
+  .anipage-card {
     height: 8rem;
     width: 6rem;
-    margin: 1rem 0.5rem;
+    margin: 0;
   }
 
   .anicard-overlay {

@@ -18,13 +18,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="hamburger-icon">
-        <GiHamburgerMenu onClick={handleClick} />
-      </div>
       <div className="logo">
-        <div className="text-logo">
-          <h1>Discover</h1>
-        </div>
 
         <div className="link-logo">
           <Logo />
@@ -32,7 +26,10 @@ const Header = () => {
 
         <SearchForm />
       </div>
-      <hr className="page-divider"></hr>
+
+      <div className="hamburger-icon">
+        <GiHamburgerMenu onClick={handleClick} />
+      </div>
 
       <Modal isClicked={isClicked} closeMenu={closeMenu} />
     </header>

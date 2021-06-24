@@ -3,7 +3,7 @@ import StandardResults from "../components/StandardResults";
 
 const AniUpcoming = ({ type, status }) => {
   return (
-    <section className="container">
+    <section className="main-content">
       <StandardResults type={type} status={status} />
     </section>
   );

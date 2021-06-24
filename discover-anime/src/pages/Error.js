@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <section className="container">
-      <div className="center">
+    <section className="main-content">
+      <div className="center-top">
         <h2>Oops! Something went wrong!</h2>
         <Link to="/" className="btn primary-btn">
           Go Back

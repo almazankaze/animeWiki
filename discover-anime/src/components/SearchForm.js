@@ -16,6 +16,7 @@ const SearchForm = () => {
     <div className="search">
       <form className="search-form" onSubmit={handleSubmit}>
         <input
+          className="myInput"
           type="text"
           name="name"
           id="name"

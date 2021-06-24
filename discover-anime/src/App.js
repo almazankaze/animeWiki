@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SideNav from "./components/SideNav";
 import Home from "./pages/Home";
@@ -12,7 +11,7 @@ import StandardPage from "./pages/StandardPage";
 function App() {
   return (
     <main>
-      <section className="glass">
+      <section>
         <Router>
           <Header />
           <SideNav />

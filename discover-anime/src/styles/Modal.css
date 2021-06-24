@@ -27,7 +27,7 @@
 .modal-content {
   position: fixed;
   background-color: #fefefe;
-  width: 85%;
+  width: 90%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -53,11 +53,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 16px;
+  padding: 0.25rem 1rem;
   background-color: #426696;
   color: white;
-  height: 2.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .modal-header h2 {
@@ -101,7 +101,7 @@
   height: 2.5rem;
   background-color: #426696;
   color: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 /* Add Animation */
