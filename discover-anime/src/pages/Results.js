@@ -1,10 +1,9 @@
 import React from "react";
 import ResultsList from "../components/ResultsList";
-import "../styles/Results.css";
 
 const Results = () => {
   return (
-    <section className="container">
+    <section className="main-content">
       <ResultsList />
     </section>
   );

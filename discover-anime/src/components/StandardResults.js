@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import Card from "../components/Card";
-import "../styles/Results.css";
 
 const StandardResults = ({ type, status }) => {
   const [loading, setLoading] = useState(false);
@@ -33,16 +32,15 @@ const StandardResults = ({ type, status }) => {
     return <Loader />;
   } else {
     return (
-      <div className="results">
+      <ul className="anime-card-collection">
         {results.map((anime) => (
           <Card
             key={anime.id}
             id={anime.id}
             attributes={anime.attributes}
-            className="card"
           ></Card>
         ))}
-      </div>
+      </ul>
     );
   }
 };

@@ -1,29 +1,102 @@
-.search {
-}
-
-.search input[type="text"] {
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  width: 8rem;
+.myInput {
+  width: 10rem;
+  border-radius: 25px;
   border: none;
-  padding: 0.25rem;
-  border-radius: 2rem;
+  outline: none;
+  padding: 0.375em 1em 0.375em;
+  font-size: 1rem;
+  margin-right: 0.25rem;
 }
 
-.search input[type="text"]:focus {
-  outline: 0;
+::placeholder {
+
+  opacity: 1; /* Firefox */
+  font-size: 1rem;
 }
 
-@media only screen and (min-device-width: 768px) {
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+
+  font-size: 1rem;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 20rem) {
+  .myInput {
+    width: 7rem;
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+
+  .myInput {
+    padding: 0.25em 0.75em 0.25em;
+    font-size: 0.75rem;
+  }
+
+  ::placeholder {
+    opacity: 1; /* Firefox */
+    font-size: 0.75rem;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 0.75rem;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 20rem) {
+
+  .myInput {
+    width: 10rem;
+  }
+}
+
+@media (min-width: 31.25rem) {
+
+  .myInput {
+    width: 12rem;
+    padding: 0.5em 1em 0.5em;
+    margin-right: 0;
+  }
+}
+
+
+@media only screen and (min-width: 50rem) {
+
   .search {
-    padding-top: 2rem;
+    width: 100%;
   }
 
-  .search input[type="text"] {
-    padding: 0.5rem;
-    width: 16rem;
+  .myInput {
+    width: 22rem;
+    padding: 0.625em 1.25em 0.625em;
+    font-size: 1.25rem;
   }
+
+  ::placeholder {
+
+  opacity: 1; /* Firefox */
+  font-size: 1.25rem;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+
+  font-size: 1.25rem;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+    font-size: 1.25rem;
+}
 }

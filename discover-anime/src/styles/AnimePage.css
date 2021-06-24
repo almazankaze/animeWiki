@@ -1,6 +1,14 @@
-.anime-card {
+.anime-page-grid {
+  display: grid;
+  justify-items: center;
+  margin: 0 1rem;
+  row-gap: 1rem;
+  padding-top: 6rem;
+}
+
+.content-container {
+  width: 100%;
   border-radius: 1rem;
-  margin: 0.5rem;
   color: white;
   background: linear-gradient(
     to left top,
@@ -10,32 +18,7 @@
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 }
 
-.notFound {
-  display: flex;
-  justify-content: center;
-}
-
-.section-title {
-  padding-top: 2.5rem;
-}
-
-.anime {
-  padding-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "pic"
-    "info"
-    "sum"
-    "side";
-}
-
 .img-card {
-  margin: 0.5rem;
-  max-width: 80%;
-  justify-self: center;
-  grid-area: pic;
 }
 
 .img-card img {
@@ -44,7 +27,6 @@
 }
 
 .info-card {
-  grid-area: info;
   text-align: left;
   padding: 1rem;
 }
@@ -56,53 +38,108 @@
 .info-card p {
   font-weight: bold;
   line-height: 1.8;
-  color: #658ec6;
+  color: var(--main-color);
   opacity: 0.8;
+  font-size: 1rem;
   text-transform: capitalize;
-  margin-top: 0.5rem;
 }
 
 .anime-link {
   text-decoration: none;
 }
 
-.summary-card {
-  grid-area: sum;
-}
-
 .synopsis {
   padding: 1rem;
   font-weight: bold;
-  color: #658ec6;
+  color: var(--main-color);
   opacity: 0.8;
 }
 
 .similar-card {
-  grid-area: side;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .similar-card h2 {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-  .notFound {
-    margin-left: 200px;
-  }
+.similar-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .anime {
-    margin-left: 200px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+@media only screen and (max-width: 25rem) {
+  .anime-page-grid {
+    padding-top: 5rem;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .anime-page-grid {
+    padding-top: 9rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 68.75rem) {
+  .anime-page-grid {
+    margin: 0;
+    padding: 1rem;
+    margin-left: 14rem;
+    column-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "pic info info side"
-      "sum sum sum side";
+      "pic info info"
+      "sum sum sum"
+      "side side side";
+  }
+
+  .img-card {
+    grid-area: pic;
+  }
+
+  .info-card {
+    grid-area: info;
+  }
+
+  .similar-card {
+    grid-area: side;
+    margin: 0;
+  }
+
+  .summary-card {
+    grid-area: sum;
   }
 
   .img-card {
     max-width: 100%;
+  }
+
+  .similar-list > .cards-item {
+    width: 33.333333%;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .info-card > p {
+    font-size: 1.5rem;
+  }
+
+  .synopsis {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 85rem) {
+  .similar-list > .cards-item {
+    width: 25%;
   }
 }

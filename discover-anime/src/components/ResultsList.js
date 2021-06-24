@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import Card from "../components/Card";
-import "../styles/Results.css";
 
 const ResultsList = () => {
   const [loading, setLoading] = useState(false);
@@ -37,22 +36,21 @@ const ResultsList = () => {
     return <Loader />;
   } else if (results.length < 1) {
     return (
-      <section className="notFound">
-        <h1 className="section-title">Anime not found...</h1>
+      <section className="center-top">
+        <h1>Anime not found...</h1>
       </section>
     );
   } else {
     return (
-      <div className="results">
+      <ul className="anime-card-collection">
         {results.map((anime) => (
           <Card
             key={anime.id}
             id={anime.id}
             attributes={anime.attributes}
-            className="card"
           ></Card>
         ))}
-      </div>
+      </ul>
     );
   }
 };

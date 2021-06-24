@@ -17,12 +17,12 @@ const AnimePage = () => {
     async function fetchAnime() {
       try {
         const [res1, res2] = await Promise.all([
-          fetch(
-            `https://kitsu.io/api/edge/anime?filter[id]=${id}`
-          ).then((response) => response.json()),
-          fetch(
-            `https://kitsu.io/api/edge/anime/${id}/categories`
-          ).then((response) => response.json()),
+          fetch(`https://kitsu.io/api/edge/anime?filter[id]=${id}`).then(
+            (response) => response.json()
+          ),
+          fetch(`https://kitsu.io/api/edge/anime/${id}/categories`).then(
+            (response) => response.json()
+          ),
         ]);
 
         if (res1) {
@@ -77,8 +77,8 @@ const AnimePage = () => {
   }
   if (!result) {
     return (
-      <section className="notFound">
-        <h1 className="section-title">Anime not found...</h1>
+      <section className="center-top">
+        <h1>Oops! Something went wrong!</h1>
       </section>
     );
   } else {
@@ -98,11 +98,11 @@ const AnimePage = () => {
       trailer,
     } = result;
     return (
-      <section className="anime">
+      <section className="anime-page-grid">
         <div className="img-card">
           <img src={pic} alt={name} />
         </div>
-        <div className="anime-card info-card">
+        <div className="content-container info-card">
           <p>
             <span className="info-data">title :</span> {name}
           </p>
@@ -144,22 +144,22 @@ const AnimePage = () => {
             </Link>
           </p>
         </div>
-        <div className="anime-card summary-card">
+        <div className="content-container summary-card">
           <p className="synopsis">{synopsis}</p>
         </div>
 
-        <div className="anime-card similar-card">
+        <div className="content-container similar-card">
           <h2>Similar Anime</h2>
-          <div className="results">
+          <ul className="similar-list">
             {similar.map((anime) => (
               <Card
                 key={anime.id}
                 id={anime.id}
                 attributes={anime.attributes}
-                type="anipage-card"
+                type="anipage"
               ></Card>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
     );

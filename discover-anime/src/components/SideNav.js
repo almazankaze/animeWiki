@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const SideNav = () => {
   return (
-    <nav className="sidenav">
+    <nav className="sidenav bg-main">
       <Logo />
       <div className="links">
         <hr className="sidebar-divider"></hr>
