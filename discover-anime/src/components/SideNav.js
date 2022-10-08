@@ -9,15 +9,15 @@ const SideNav = () => {
       <div className="links">
         <hr className="sidebar-divider"></hr>
         <h3>Anime</h3>
-        <NavLink exact={true} to="/" activeClassName="current" className="link">
+        <NavLink to="/" activeclassname="current" className="link">
           <h2>Popular</h2>
         </NavLink>
-        <NavLink to="/anime/ongoing" activeClassName="current" className="link">
+        <NavLink to="/anime/ongoing" activeclassname="current" className="link">
           <h2>Ongoing</h2>
         </NavLink>
         <NavLink
           to="/anime/upcoming"
-          activeClassName="current"
+          activeclassname="current"
           className="link"
         >
           <h2>Upcoming</h2>
@@ -35,7 +35,7 @@ const SideNav = () => {
           <h2>Upcoming</h2>
         </div>
         <hr className="sidebar-divider"></hr>
-        <NavLink to="/about" activeClassName="current" className="link">
+        <NavLink to="/about" activeclassname="current" className="link">
           <h2>About</h2>
         </NavLink>
       </div>

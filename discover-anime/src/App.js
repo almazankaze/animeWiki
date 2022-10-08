@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import SideNav from "./components/SideNav";
 import Home from "./pages/Home";
 import AnimePage from "./pages/AnimePage";
@@ -16,29 +22,22 @@ function App() {
           <Header />
           <SideNav />
 
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/results/:searchName">
-              <Results />
-            </Route>
-            <Route path="/page/:id">
-              <AnimePage />
-            </Route>
-            <Route path="/anime/ongoing">
-              <StandardPage type="anime" status="current" />
-            </Route>
-            <Route path="/anime/upcoming">
-              <StandardPage type="anime" status="upcoming" />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route exact path="*">
-              <Error />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/results/:searchName" element={<Results />} />
+            <Route path="/page/:id" element={<AnimePage />} />
+            <Route
+              path="/anime/ongoing"
+              element={<StandardPage type="anime" status="current" />}
+            />
+            <Route
+              path="/anime/upcoming"
+              element={<StandardPage type="anime" status="upcoming" />}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
         </Router>
       </section>
     </main>

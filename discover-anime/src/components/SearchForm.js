@@ -1,15 +1,15 @@
 import "../styles/SearchForm.css";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
   const [input, setInput] = useState("");
 
-  let history = useHistory();
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    history.push(`/results/${input}`);
+    navigate(`/results/${input}`);
   }
 
   return (
