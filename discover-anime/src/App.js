@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { getAnime } from "./actions/anime";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +18,16 @@ import About from "./pages/About";
 import StandardPage from "./pages/StandardPage";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAnime());
+  }, [dispatch]);
+
+  const { anime, loading } = useSelector((state) => state.anime);
+
+  console.log(anime);
+
   return (
     <main>
       <section>
