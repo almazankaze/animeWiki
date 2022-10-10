@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { getUpcoming, getAnime, getCurrent } from "../../actions/anime";
 import AnimeSection from "../../components/animeSection/AnimeSection";
+import Search from "../../components/searchform/Search";
 
 import "./home.css";
 
@@ -22,6 +23,7 @@ const Home = () => {
 
   return (
     <div className="home app-container">
+      <Search />
       <div className="home-section">
         <div className="home-section-title">
           <h3 className="title-text-color">Trending Now</h3>

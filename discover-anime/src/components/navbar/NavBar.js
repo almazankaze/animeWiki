@@ -15,27 +15,32 @@ function NavBar() {
     <div className="navbar">
       <div className="navbar-container app-container">
         <div className="nav-left">
-          <div className="nav-title">
+          <Link to="/" className="nav-title">
             <DevicesIcon className="nav-logo" titleAccess="AniSearch" />
             <h1>AniSearch</h1>
-          </div>
+          </Link>
         </div>
 
         <div className="nav-middle">
           <ul className="middle-nav-menu">
             <li>
               <Link to="/" className="nav-link">
-                Pulls
+                Search
               </Link>
             </li>
             <li>
               <Link to="/" className="nav-link">
-                Issues
+                Community
               </Link>
             </li>
             <li>
               <Link to="/" className="nav-link">
                 Marketplace
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="nav-link">
+                About
               </Link>
             </li>
           </ul>

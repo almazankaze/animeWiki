@@ -22,7 +22,7 @@ function Footer() {
           </div>
           <div className="footer-info-container">
             <EmailIcon titleAccess="email" />
-            <h4 className="footer-info-text">MeTech@example.com</h4>
+            <h4 className="footer-info-text">anisearch@example.com</h4>
           </div>
           <div className="footer-info-container">
             <PhoneIcon titleAccess="phone" />

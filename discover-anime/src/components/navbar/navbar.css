@@ -24,7 +24,8 @@
 .nav-title {
   display: flex;
   align-items: baseline;
-  cursor: pointer;
+  color: var(--white);
+  text-decoration: none;
 }
 
 .nav-logo {
