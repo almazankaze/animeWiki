@@ -1,0 +1,24 @@
+.card-container {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.card-container h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.card-container:hover {
+  color: var(--main-color);
+}

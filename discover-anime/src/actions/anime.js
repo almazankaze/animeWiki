@@ -1,5 +1,7 @@
 import {
   FETCH_ANIME,
+  FETCH_UPCOMING,
+  FETCH_CURRENT,
   FETCH_ANIME_BY_SEARCH,
   LOADING,
   ERROR,
@@ -7,10 +9,32 @@ import {
 
 import * as api from "../api/index";
 
-export const getAnime = () => async (dispatch) => {
+export const getUpcoming = (limit) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });
-    const { data } = await api.fetchAnime();
+    const { data } = await api.fetchUpcoming(limit);
+
+    dispatch({ type: FETCH_UPCOMING, payload: data });
+  } catch (e) {
+    dispatch({ type: ERROR });
+  }
+};
+
+export const getCurrent = (limit) => async (dispatch) => {
+  try {
+    dispatch({ type: LOADING });
+    const { data } = await api.fetchCurrent(limit);
+
+    dispatch({ type: FETCH_CURRENT, payload: data });
+  } catch (e) {
+    dispatch({ type: ERROR });
+  }
+};
+
+export const getAnime = (limit) => async (dispatch) => {
+  try {
+    dispatch({ type: LOADING });
+    const { data } = await api.fetchAnime(limit);
 
     dispatch({ type: FETCH_ANIME, payload: data });
   } catch (e) {

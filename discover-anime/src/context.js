@@ -1,37 +1,21 @@
-import React, { useContext, useReducer, useEffect } from "react";
-import reducer from "./reducer";
+import React, { useContext, useState } from "react";
 
-const url =
-  "https://kitsu.io/api/edge/anime?page[limit]=20&sort=popularityRank";
 const AppContext = React.createContext();
 
 const initialState = {
   animeDB: [],
-  loading: false,
 };
 
 const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const fetchData = async () => {
-    try {
-      dispatch({ type: "LOADING" });
-      const resp = await fetch(url);
-      const data = await resp.json();
-
-      const anime = data.data;
-      dispatch({ type: "DISPLAY_ITEMS", payload: anime });
-    } catch (error) {
-      dispatch({ type: "ERROR" });
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const [savedInfo, setSavedInfo] = useState(initialState);
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider
+      value={{ ...savedInfo, setSavedInfo, showMenu, setShowMenu }}
+    >
+      {children}
+    </AppContext.Provider>
   );
 };
 

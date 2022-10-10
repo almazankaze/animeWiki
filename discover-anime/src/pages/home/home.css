@@ -1,0 +1,18 @@
+.home-section {
+  padding: 3rem 0;
+}
+
+.home-section-title {
+  margin-bottom: 1rem;
+}
+
+.home-section-title h3 {
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.home-section-title h3:hover {
+  color: var(--white);
+}

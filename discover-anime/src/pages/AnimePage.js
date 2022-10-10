@@ -2,9 +2,8 @@ import React from "react";
 import "../styles/AnimePage.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Loading from "../components/Loader";
+import Loading from "../components/loader/Loader";
 import { Link } from "react-router-dom";
-import Card from "../components/Card";
 
 const AnimePage = () => {
   const { id } = useParams();
@@ -152,12 +151,7 @@ const AnimePage = () => {
           <h2>Similar Anime</h2>
           <ul className="similar-list">
             {similar.map((anime) => (
-              <Card
-                key={anime.id}
-                id={anime.id}
-                attributes={anime.attributes}
-                type="anipage"
-              ></Card>
+              <div></div>
             ))}
           </ul>
         </div>

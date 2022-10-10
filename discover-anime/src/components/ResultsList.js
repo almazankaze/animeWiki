@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loader from "../components/Loader";
-import Card from "../components/Card";
+import Loader from "./loader/Loader";
 
 const ResultsList = () => {
   const [loading, setLoading] = useState(false);
@@ -44,11 +43,7 @@ const ResultsList = () => {
     return (
       <ul className="anime-card-collection">
         {results.map((anime) => (
-          <Card
-            key={anime.id}
-            id={anime.id}
-            attributes={anime.attributes}
-          ></Card>
+          <div></div>
         ))}
       </ul>
     );

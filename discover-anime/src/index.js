@@ -7,7 +7,8 @@ import rootReducer from "./reducers";
 import App from "./App";
 import { AppProvider } from "./context";
 
-import "./App.css";
+import "./reset.css";
+import "./index.css";
 
 const container = document.getElementById("root");
 
