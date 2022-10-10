@@ -23,21 +23,21 @@ const Modal = () => {
               <Link
                 to="/"
                 className="modal-link"
-                onClick={() => setShowMenu(true)}
+                onClick={() => setShowMenu(false)}
               >
                 <h3>Popular</h3>
               </Link>
               <Link
-                to="/anime/ongoing"
+                to="/"
                 className="modal-link"
-                onClick={() => setShowMenu(true)}
+                onClick={() => setShowMenu(false)}
               >
                 <h3>Ongoing</h3>
               </Link>
               <Link
-                to="/anime/upcoming"
+                to="/"
                 className="modal-link"
-                onClick={() => setShowMenu(true)}
+                onClick={() => setShowMenu(false)}
               >
                 <h3>Upcoming</h3>
               </Link>
@@ -50,7 +50,7 @@ const Modal = () => {
             </section>
             <section className="link-group">
               <Link
-                to="/about"
+                to="/"
                 className="modal-link"
                 onClick={() => setShowMenu(true)}
               >
