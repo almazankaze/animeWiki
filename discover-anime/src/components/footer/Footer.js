@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -12,6 +13,10 @@ import SendIcon from "@mui/icons-material/Send";
 import "./footer.css";
 
 function Footer() {
+  const location = useLocation();
+
+  if (location.pathname === "/notfound") return null;
+
   return (
     <div className="footer">
       <div className="footer-container app-container">

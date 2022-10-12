@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { getUpcoming, getAnime, getCurrent } from "../../actions/anime";
 import AnimeSection from "../../components/animeSection/AnimeSection";
@@ -25,9 +26,12 @@ const Home = () => {
     <div className="home app-container">
       <Search />
       <div className="home-section">
-        <div className="home-section-title">
-          <h3 className="title-text-color">Trending Now</h3>
-        </div>
+        <Link
+          to="/anime/trending"
+          className="home-section-title title-text-color"
+        >
+          Trending Now
+        </Link>
         <AnimeSection
           anime={current.anime}
           loading={current.loading}
@@ -35,9 +39,12 @@ const Home = () => {
         />
       </div>
       <div className="home-section">
-        <div className="home-section-title">
-          <h3 className="title-text-color">Upcoming</h3>
-        </div>
+        <Link
+          to="/anime/upcoming"
+          className="home-section-title title-text-color"
+        >
+          Upcoming
+        </Link>
         <AnimeSection
           anime={upcoming.anime}
           loading={upcoming.loading}
@@ -46,9 +53,12 @@ const Home = () => {
       </div>
 
       <div className="home-section">
-        <div className="home-section-title">
-          <h3 className="title-text-color">All time popular</h3>
-        </div>
+        <Link
+          to="/anime/popular"
+          className="home-section-title title-text-color"
+        >
+          All time popular
+        </Link>
         <AnimeSection
           anime={popular.anime}
           loading={popular.loading}

@@ -1,0 +1,10 @@
+.about {
+  flex: 1;
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
+
+.about a {
+  text-decoration: none;
+  color: var(--main-color);
+}

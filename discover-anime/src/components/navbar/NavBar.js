@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import DevicesIcon from "@mui/icons-material/Devices";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -10,6 +10,10 @@ import Modal from "../modal/Modal";
 
 function NavBar() {
   const { setShowMenu } = useGlobalContext();
+
+  const location = useLocation();
+
+  if (location.pathname === "/notfound") return null;
 
   return (
     <div className="navbar">
@@ -35,7 +39,7 @@ function NavBar() {
             </li>
             <li>
               <Link to="/" className="nav-link">
-                Marketplace
+                News
               </Link>
             </li>
             <li>

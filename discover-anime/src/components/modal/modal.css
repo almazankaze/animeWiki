@@ -1,52 +1,31 @@
-.show-modal {
-  display: block;
-}
-
-.hide-modal {
-  display: none;
-}
-
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 999; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 999;
   left: 0;
   top: 0;
-  padding: 3rem 1.5rem 1.5rem;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
+  padding: 4rem 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content */
+.modal.show {
+  display: flex;
+  justify-content: center;
+}
+
 .modal-content {
+  display: block;
   position: fixed;
-  background-color: #fefefe;
-  width: 90%;
+  padding: 0 1rem;
+  width: 60%;
   -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
   animation-name: slideIn;
-  animation-duration: 0.4s;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+  animation-duration: 0.5s;
 }
 
 .modal-header {
@@ -54,14 +33,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 1rem;
-  background-color: #426696;
-  color: white;
-
+  background-color: var(--nav-color);
+  color: var(--white);
   border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 
-.modal-header h2 {
-  color: white;
+.close {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .modal-body {
@@ -69,74 +50,61 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   min-height: 24rem;
-  background-color: #426696;
-  color: white;
+  background-color: var(--nav-color);
 }
 
-.link-group {
-  padding-bottom: 1rem;
+.modal-nav {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-category {
-  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.25rem;
 }
 
 .modal-link {
-  padding-bottom: 0.5rem;
+  color: var(--gray-200);
+  font-weight: 500;
+  margin: 0.25rem;
   text-decoration: none;
-}
-
-.modal-link h3 {
-  color: white;
-}
-
-.link-group h3 {
-  padding-bottom: 0.5rem;
-  color: white;
 }
 
 .modal-footer {
   height: 2.5rem;
-  background-color: #426696;
-  color: white;
+  background-color: var(--nav-color);
   border-top: 2px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Add Animation */
 @-webkit-keyframes slideIn {
   from {
-    opacity: 0;
+    transform: translateY(-600px);
   }
   to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes slideIn {
   from {
-    opacity: 0;
+    transform: translateY(-600px);
   }
   to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+@media (max-width: 700px) {
+  .modal-content {
+    width: 80%;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+@media (max-width: 400px) {
+  .modal-content {
+    width: 100%;
   }
 }

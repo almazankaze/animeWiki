@@ -1,18 +1,16 @@
 .home-section {
-  padding: 3rem 0;
+  padding: 2.5rem 0;
 }
 
 .home-section-title {
-  margin-bottom: 1rem;
-}
-
-.home-section-title h3 {
   display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
   text-transform: uppercase;
-  cursor: pointer;
+  margin-bottom: 1rem;
   transition: color 0.2s ease-in-out;
 }
 
-.home-section-title h3:hover {
+.home-section-title:hover {
   color: var(--white);
 }
