@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { getUpcoming, getAnime, getCurrent } from "../../actions/anime";
-import AnimeSection from "../../components/animeSection/AnimeSection";
+import AnimeList from "../../components/animeList/AnimeList";
 import Search from "../../components/searchform/Search";
 
 import "./home.css";
@@ -32,7 +32,7 @@ const Home = () => {
         >
           Trending Now
         </Link>
-        <AnimeSection
+        <AnimeList
           anime={current.anime}
           loading={current.loading}
           error={current.error}
@@ -45,7 +45,7 @@ const Home = () => {
         >
           Upcoming
         </Link>
-        <AnimeSection
+        <AnimeList
           anime={upcoming.anime}
           loading={upcoming.loading}
           error={upcoming.error}
@@ -59,7 +59,7 @@ const Home = () => {
         >
           All time popular
         </Link>
-        <AnimeSection
+        <AnimeList
           anime={popular.anime}
           loading={popular.loading}
           error={popular.error}

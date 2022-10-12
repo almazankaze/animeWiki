@@ -2,9 +2,9 @@ import React from "react";
 import Card from "../card/Card";
 import Loader from "../loader/Loader";
 
-import "./animeSection.css";
+import "./animeList.css";
 
-function AnimeSection({ anime, loading, error }) {
+function AnimeList({ anime, loading, error }) {
   if (anime.length <= 0) return <div className="anime-section"></div>;
   if (loading)
     return (
@@ -25,4 +25,4 @@ function AnimeSection({ anime, loading, error }) {
   }
 }
 
-export default AnimeSection;
+export default AnimeList;
