@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "./pagination.css";
 
-function Pagination({ currentPage, pages }) {
+function Pagination({ currentPage, pages, path, loading }) {
   const addBtns = () => {
     let content = [];
     let start = currentPage;
@@ -17,7 +17,7 @@ function Pagination({ currentPage, pages }) {
         <NavLink
           className="page-btn"
           key="prev"
-          to={`/anime/trending?page=${currentPage - 1}`}
+          to={`/anime/${path}?page=${currentPage - 1}`}
         >
           prev
         </NavLink>
@@ -33,7 +33,7 @@ function Pagination({ currentPage, pages }) {
               : "page-btn num-btn"
           }
           key={i}
-          to={`/anime/trending?page=${i}`}
+          to={`/anime/${path}?page=${i}`}
         >
           {i}
         </NavLink>
@@ -45,7 +45,7 @@ function Pagination({ currentPage, pages }) {
         <NavLink
           className="page-btn"
           key="next"
-          to={`/anime/trending?page=${currentPage + 1}`}
+          to={`/anime/${path}?page=${currentPage + 1}`}
         >
           next
         </NavLink>
@@ -54,6 +54,10 @@ function Pagination({ currentPage, pages }) {
 
     return content;
   };
+
+  if (loading) {
+    return <div></div>;
+  }
   return <div className="btns-container">{addBtns()}</div>;
 }
 

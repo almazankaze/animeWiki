@@ -5,7 +5,10 @@ import "./card.css";
 
 function Card({ anime }) {
   return (
-    <Link to={"/"} className="card-container sub-text-color">
+    <Link
+      to={`/anime/infopage/${anime.id}`}
+      className="card-container sub-text-color"
+    >
       <div className="card">
         <img
           src={anime.attributes.posterImage.large}

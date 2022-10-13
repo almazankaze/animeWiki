@@ -17,4 +17,4 @@ export const fetchCurrent = (limit, offset) =>
     `/anime?page[limit]=${limit}&page[offset]=${offset}&filter[status]=current&sort=popularityRank`
   );
 
-export const fetchAnimeBySearch = () => API.get("/");
+export const fetchAnimeById = (id) => API.get(`/anime?filter[id]=${id}`);

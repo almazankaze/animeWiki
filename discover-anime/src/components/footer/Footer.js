@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useLocation } from "react-router-dom";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -14,8 +14,20 @@ import "./footer.css";
 
 function Footer() {
   const location = useLocation();
+  const footerRef = useRef(null);
 
   if (location.pathname === "/notfound") return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const email = footerRef.current["emailText"].value;
+
+    if (email) {
+    }
+
+    footerRef.current.reset();
+  };
 
   return (
     <div className="footer">
@@ -66,7 +78,7 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h3 className="footer-heading">Get the latest anime news</h3>
-          <form className="footer-form">
+          <form className="footer-form" ref={footerRef} onSubmit={handleSubmit}>
             <input
               type="email"
               className="footer-input"
@@ -74,7 +86,6 @@ function Footer() {
               placeholder="Your email address"
               name="emailText"
               noValidate
-              required
             />
             <SendIcon className="footer-form-icon" />
           </form>

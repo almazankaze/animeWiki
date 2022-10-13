@@ -2,6 +2,7 @@ import {
   FETCH_ANIME,
   FETCH_UPCOMING,
   FETCH_CURRENT,
+  FETCH_ANIME_BY_ID,
   FETCH_ANIME_BY_SEARCH,
   LOADING,
   ERROR,
@@ -42,12 +43,12 @@ export const getAnime = (limit, offset) => async (dispatch) => {
   }
 };
 
-export const getAnimeBySearch = (searchQuery, page) => async (dispatch) => {
+export const getSingleAnime = (id) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });
-    const { data } = await api.fetchAnimeBySearch(searchQuery, page);
+    const { data } = await api.fetchAnimeById(id);
 
-    dispatch({ type: FETCH_ANIME_BY_SEARCH, payload: data });
+    dispatch({ type: FETCH_ANIME_BY_ID, payload: data });
   } catch (e) {
     dispatch({ type: ERROR });
   }
