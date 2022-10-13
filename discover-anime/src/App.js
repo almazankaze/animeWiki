@@ -26,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+
           <Route path="/anime/trending" element={<Trending />} />
           <Route path="/anime/upcoming" element={<Upcoming />} />
           <Route path="/anime/popular" element={<AllTime />} />

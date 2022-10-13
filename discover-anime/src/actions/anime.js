@@ -9,10 +9,10 @@ import {
 
 import * as api from "../api/index";
 
-export const getUpcoming = (limit) => async (dispatch) => {
+export const getUpcoming = (limit, offset) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });
-    const { data } = await api.fetchUpcoming(limit);
+    const { data } = await api.fetchUpcoming(limit, offset);
 
     dispatch({ type: FETCH_UPCOMING, payload: data });
   } catch (e) {
@@ -20,10 +20,10 @@ export const getUpcoming = (limit) => async (dispatch) => {
   }
 };
 
-export const getCurrent = (limit) => async (dispatch) => {
+export const getCurrent = (limit, offset) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });
-    const { data } = await api.fetchCurrent(limit);
+    const { data } = await api.fetchCurrent(limit, offset);
 
     dispatch({ type: FETCH_CURRENT, payload: data });
   } catch (e) {
@@ -31,23 +31,10 @@ export const getCurrent = (limit) => async (dispatch) => {
   }
 };
 
-export const getAnime = (limit) => async (dispatch) => {
+export const getAnime = (limit, offset) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });
-    const { data } = await api.fetchAnime(limit);
-
-    dispatch({ type: FETCH_ANIME, payload: data });
-  } catch (e) {
-    dispatch({ type: ERROR });
-  }
-};
-
-export const getPage = (page) => async (dispatch) => {
-  try {
-    if (page === null) page = 1;
-
-    dispatch({ type: LOADING });
-    const { data } = await api.fetchPage(page);
+    const { data } = await api.fetchAnime(limit, offset);
 
     dispatch({ type: FETCH_ANIME, payload: data });
   } catch (e) {

@@ -1,13 +1,9 @@
-import {
-  FETCH_ANIME,
-  FETCH_ANIME_BY_SEARCH,
-  LOADING,
-  ERROR,
-} from "../constants/actionTypes";
+import { FETCH_ANIME, LOADING, ERROR } from "../constants/actionTypes";
 
 const animeReducer = (
   state = {
     anime: [],
+    count: 0,
     loading: false,
     error: false,
   },
@@ -15,17 +11,17 @@ const animeReducer = (
 ) => {
   switch (action.type) {
     case FETCH_ANIME:
-    case FETCH_ANIME_BY_SEARCH:
       return {
         ...state,
         anime: action.payload,
+        count: action.payload.meta.count,
         loading: false,
         error: false,
       };
     case LOADING:
       return { ...state, loading: true };
     case ERROR:
-      return { ...state, anime: [], loading: false, error: true };
+      return { ...state, anime: [], count: 0, loading: false, error: true };
     default:
       return state;
   }

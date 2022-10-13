@@ -3,6 +3,7 @@ import { FETCH_UPCOMING, LOADING, ERROR } from "../constants/actionTypes";
 const upcomingReducer = (
   state = {
     anime: [],
+    count: 0,
     loading: false,
     error: false,
   },
@@ -13,13 +14,14 @@ const upcomingReducer = (
       return {
         ...state,
         anime: action.payload,
+        count: action.payload.meta.count,
         loading: false,
         error: false,
       };
     case LOADING:
       return { ...state, loading: true };
     case ERROR:
-      return { ...state, anime: [], loading: false, error: true };
+      return { ...state, anime: [], count: 0, loading: false, error: true };
     default:
       return state;
   }

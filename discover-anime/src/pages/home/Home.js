@@ -12,9 +12,9 @@ const Home = () => {
 
   useEffect(() => {
     batch(() => {
-      dispatch(getCurrent(6));
-      dispatch(getUpcoming(6));
-      dispatch(getAnime(6));
+      dispatch(getCurrent(6, 0));
+      dispatch(getUpcoming(6, 0));
+      dispatch(getAnime(6, 0));
     });
   }, [dispatch]);
 
@@ -27,7 +27,7 @@ const Home = () => {
       <Search />
       <div className="home-section">
         <Link
-          to="/anime/trending"
+          to="/anime/trending?page=1"
           className="home-section-title title-text-color"
         >
           Trending Now
