@@ -12,7 +12,7 @@ const singleAnimeReducer = (
     case FETCH_ANIME_BY_ID:
       return {
         ...state,
-        anime: action.payload,
+        anime: action.payload.data[0],
         loading: false,
         error: false,
       };

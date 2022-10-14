@@ -49,7 +49,7 @@ function Trending() {
       <Pagination
         currentPage={page}
         pages={Math.ceil(current.count / 18)}
-        path="trending"
+        path="/trending?"
         loading={current.loading}
       />
     </div>

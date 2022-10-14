@@ -43,6 +43,18 @@ export const getAnime = (limit, offset) => async (dispatch) => {
   }
 };
 
+export const getSearchedAnime =
+  (limit, offset, searchTerm) => async (dispatch) => {
+    try {
+      dispatch({ type: LOADING });
+      const { data } = await api.fetchSearchedAnime(limit, offset, searchTerm);
+
+      dispatch({ type: FETCH_ANIME_BY_SEARCH, payload: data });
+    } catch (e) {
+      dispatch({ type: ERROR });
+    }
+  };
+
 export const getSingleAnime = (id) => async (dispatch) => {
   try {
     dispatch({ type: LOADING });

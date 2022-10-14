@@ -49,7 +49,7 @@ function Upcoming() {
       <Pagination
         currentPage={page}
         pages={Math.ceil(upcoming.count / 18)}
-        path="upcoming"
+        path="/upcoming?"
         loading={upcoming.loading}
       />
     </div>

@@ -17,7 +17,7 @@ function Pagination({ currentPage, pages, path, loading }) {
         <NavLink
           className="page-btn"
           key="prev"
-          to={`/anime/${path}?page=${currentPage - 1}`}
+          to={`/anime${path}page=${currentPage - 1}`}
         >
           prev
         </NavLink>
@@ -33,7 +33,7 @@ function Pagination({ currentPage, pages, path, loading }) {
               : "page-btn num-btn"
           }
           key={i}
-          to={`/anime/${path}?page=${i}`}
+          to={`/anime${path}page=${i}`}
         >
           {i}
         </NavLink>
@@ -45,7 +45,7 @@ function Pagination({ currentPage, pages, path, loading }) {
         <NavLink
           className="page-btn"
           key="next"
-          to={`/anime/${path}?page=${currentPage + 1}`}
+          to={`/anime${path}page=${currentPage + 1}`}
         >
           next
         </NavLink>
@@ -55,7 +55,7 @@ function Pagination({ currentPage, pages, path, loading }) {
     return content;
   };
 
-  if (loading) {
+  if (loading || pages === 0) {
     return <div></div>;
   }
   return <div className="btns-container">{addBtns()}</div>;

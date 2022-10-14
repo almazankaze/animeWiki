@@ -49,7 +49,7 @@ function AllTime() {
       <Pagination
         currentPage={page}
         pages={Math.ceil(popular.count / 18)}
-        path="popular"
+        path="/popular?"
         loading={popular.loading}
       />
     </div>

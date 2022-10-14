@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 import "./search.css";
@@ -6,13 +7,15 @@ import "./search.css";
 function Search() {
   const formRef = useRef(null);
 
+  let navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const searchTerm = formRef.current["searchTerm"].value;
 
     if (searchTerm) {
-      console.log(searchTerm);
+      navigate(`/anime?searchQuery=${searchTerm || "none"}&page=${1}`);
     }
 
     formRef.current.reset();

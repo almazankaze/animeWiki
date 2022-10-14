@@ -16,6 +16,7 @@ import NavBar from "./components/navbar/NavBar";
 import SingleAnime from "./pages/anime/SingleAnime";
 
 import "./App.css";
+import SearchPage from "./pages/anime/SearchPage";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
-
+          <Route path="/anime" element={<SearchPage />} />
           <Route path="/anime/trending" element={<Trending />} />
           <Route path="/anime/upcoming" element={<Upcoming />} />
           <Route path="/anime/popular" element={<AllTime />} />

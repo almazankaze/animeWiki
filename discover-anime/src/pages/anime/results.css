@@ -5,3 +5,7 @@
 .results-page .form-container {
   margin: 2rem 0 3rem;
 }
+
+.anime-page {
+  flex: 1;
+}

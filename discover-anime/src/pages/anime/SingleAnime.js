@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleAnime } from "../../actions/anime";
+import Loader from "../../components/loader/Loader";
 
 function SingleAnime() {
   const { id } = useParams();
@@ -11,11 +12,16 @@ function SingleAnime() {
     dispatch(getSingleAnime(id));
   }, [dispatch, id]);
 
-  const anime = useSelector((state) => state.singleAnime);
+  const animeState = useSelector((state) => state.singleAnime);
 
-  console.log(anime);
+  console.log(animeState.anime);
 
-  return <div>SingleAnime</div>;
+  if (animeState.loading) {
+    <div className="anime-page">
+      <Loader />
+    </div>;
+  }
+  return <div className="anime-page app-container">Hello</div>;
 }
 
 export default SingleAnime;

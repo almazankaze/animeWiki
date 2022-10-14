@@ -1,4 +1,9 @@
-import { FETCH_ANIME, LOADING, ERROR } from "../constants/actionTypes";
+import {
+  FETCH_ANIME,
+  FETCH_ANIME_BY_SEARCH,
+  LOADING,
+  ERROR,
+} from "../constants/actionTypes";
 
 const animeReducer = (
   state = {
@@ -11,6 +16,7 @@ const animeReducer = (
 ) => {
   switch (action.type) {
     case FETCH_ANIME:
+    case FETCH_ANIME_BY_SEARCH:
       return {
         ...state,
         anime: action.payload,
