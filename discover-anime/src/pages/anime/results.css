@@ -6,6 +6,26 @@
   margin: 2rem 0 3rem;
 }
 
+/***** Anime Page *****/
 .anime-page {
   flex: 1;
+}
+
+.anime-info-container {
+  background-color: var(--nav-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.anime-info-container img {
+}
+
+.anime-info {
+  padding: 1.5rem 4rem;
+}
+
+@media (max-width: 1000px) {
+  .anime-info-container {
+    flex-direction: column;
+  }
 }
