@@ -17,7 +17,7 @@ const singleAnimeReducer = (
         error: false,
       };
     case LOADING:
-      return { ...state, loading: true };
+      return { ...state, anime: [], loading: true, error: false };
     case ERROR:
       return { ...state, anime: [], loading: false, error: true };
     default:

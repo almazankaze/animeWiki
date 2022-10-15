@@ -25,7 +25,7 @@ const animeReducer = (
         error: false,
       };
     case LOADING:
-      return { ...state, loading: true };
+      return { ...state, anime: [], count: 0, loading: true, error: false };
     case ERROR:
       return { ...state, anime: [], count: 0, loading: false, error: true };
     default:

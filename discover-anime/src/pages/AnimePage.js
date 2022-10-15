@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/AnimePage.css";
+
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "../components/loader/Loader";
