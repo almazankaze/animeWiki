@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleAnime, getCharacters } from "../../actions/anime";
 import Loader from "../../components/loader/Loader";
@@ -18,11 +18,11 @@ function SingleAnime() {
 
   const animeState = useSelector((state) => state.singleAnime);
 
-  const genres = animeState.characters.map((genre) => {
+  const genres = animeState.characters.slice(0, 2).map((genre) => {
     return genre.attributes.slug;
   });
 
-  console.log(genres.toString());
+  console.log(animeState);
 
   if (animeState.loading) {
     <div className="anime-page">
@@ -45,6 +45,19 @@ function SingleAnime() {
           <h2>Anime Info</h2>
         </div>
         <div className="anime-main">
+          <div className="anime-stats">
+            <h2 className="info-data">
+              Score:
+              <span>{` ${animeState.anime.attributes.averageRating}`}</span>
+            </h2>
+            <h2 className="info-data">
+              Popularity:
+              <span>{` #${animeState.anime.attributes.popularityRank}`}</span>
+            </h2>
+            <Link to="/" className="link-btn">
+              Watch Trailer
+            </Link>
+          </div>
           <div className="anime-desc">
             <h3>Synopsis</h3>
             <p>{animeState.anime.attributes.synopsis}</p>
@@ -96,6 +109,10 @@ function SingleAnime() {
             <p className="info-data">
               Rating:
               <span>{` ${animeState.anime.attributes.ageRatingGuide}`}</span>
+            </p>
+            <p className="info-data">
+              Genres:
+              <span>{` ${genres.join(", ")}`}</span>
             </p>
             <p className="info-data">
               Score:

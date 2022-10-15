@@ -19,13 +19,23 @@ const singleAnimeReducer = (
       return {
         ...state,
         anime: action.payload.data[0],
-        loading: false,
         error: false,
       };
     case FETCH_CHARACTERS:
-      return { ...state, characters: action.payload.data };
+      return {
+        ...state,
+        characters: action.payload.data,
+        loading: false,
+        error: false,
+      };
     case LOADING:
-      return { ...state, anime: [], loading: true, error: false };
+      return {
+        ...state,
+        anime: [],
+        characters: [],
+        loading: true,
+        error: false,
+      };
     case ERROR:
       return {
         ...state,

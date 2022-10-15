@@ -38,6 +38,17 @@
   padding: 1rem;
 }
 
+.anime-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.anime-stats .link-btn {
+  color: var(--main-color);
+}
+
 .anime-sidebar {
   grid-area: side;
 }
