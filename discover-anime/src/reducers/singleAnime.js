@@ -1,8 +1,14 @@
-import { FETCH_ANIME_BY_ID, LOADING, ERROR } from "../constants/actionTypes";
+import {
+  FETCH_ANIME_BY_ID,
+  FETCH_CHARACTERS,
+  LOADING,
+  ERROR,
+} from "../constants/actionTypes";
 
 const singleAnimeReducer = (
   state = {
     anime: [],
+    characters: [],
     loading: false,
     error: false,
   },
@@ -16,10 +22,18 @@ const singleAnimeReducer = (
         loading: false,
         error: false,
       };
+    case FETCH_CHARACTERS:
+      return { ...state, characters: action.payload.data };
     case LOADING:
       return { ...state, anime: [], loading: true, error: false };
     case ERROR:
-      return { ...state, anime: [], loading: false, error: true };
+      return {
+        ...state,
+        anime: [],
+        characters: [],
+        loading: false,
+        error: true,
+      };
     default:
       return state;
   }

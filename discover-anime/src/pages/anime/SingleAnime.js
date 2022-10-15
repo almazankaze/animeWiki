@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleAnime } from "../../actions/anime";
+import { getSingleAnime, getCharacters } from "../../actions/anime";
 import Loader from "../../components/loader/Loader";
 import ImageBanner from "../../components/imageBanner/ImageBanner";
 
@@ -10,12 +10,19 @@ function SingleAnime() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSingleAnime(id));
+    dispatch(getSingleAnime(id)).then((success) => {
+      if (success)
+        dispatch(getCharacters(`https://kitsu.io/api/edge/anime/${id}/genres`));
+    });
   }, [dispatch, id]);
 
   const animeState = useSelector((state) => state.singleAnime);
 
-  console.log(animeState.anime);
+  const genres = animeState.characters.map((genre) => {
+    return genre.attributes.slug;
+  });
+
+  console.log(genres.toString());
 
   if (animeState.loading) {
     <div className="anime-page">

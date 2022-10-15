@@ -4,6 +4,7 @@ import {
   FETCH_CURRENT,
   FETCH_ANIME_BY_ID,
   FETCH_ANIME_BY_SEARCH,
+  FETCH_CHARACTERS,
   LOADING,
   ERROR,
 } from "../constants/actionTypes";
@@ -61,6 +62,18 @@ export const getSingleAnime = (id) => async (dispatch) => {
     const { data } = await api.fetchAnimeById(id);
 
     dispatch({ type: FETCH_ANIME_BY_ID, payload: data });
+    return true;
+  } catch (e) {
+    dispatch({ type: ERROR });
+    return false;
+  }
+};
+
+export const getCharacters = (url) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchCharacters(url);
+
+    dispatch({ type: FETCH_CHARACTERS, payload: data });
   } catch (e) {
     dispatch({ type: ERROR });
   }

@@ -3,5 +3,6 @@ export const FETCH_UPCOMING = "FETCH_UPCOMING";
 export const FETCH_CURRENT = "FETCH_CURRENT";
 export const FETCH_ANIME_BY_ID = "FETCH_ANIME_BY_ID";
 export const FETCH_ANIME_BY_SEARCH = "FETCH_ANIME_BY_SEARCH";
+export const FETCH_CHARACTERS = "FETCH_CHARACTERS";
 export const LOADING = "LOADING";
 export const ERROR = "ERROR";
