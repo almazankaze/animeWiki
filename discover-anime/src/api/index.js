@@ -25,6 +25,8 @@ export const fetchSearchedAnime = (limit, offset, searchTerm) =>
 export const fetchGenres = (url) => axios.get(url);
 
 export const fetchSimilar = (genres, limit) =>
-  API.get(`/anime?page[limit]=${limit}&filter[genres]=${genres}`);
+  API.get(
+    `/anime?page[limit]=${limit}&filter[genres]=${genres}&sort=popularityRank`
+  );
 
 export const fetchAnimeById = (id) => API.get(`/anime?filter[id]=${id}`);

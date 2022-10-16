@@ -20,7 +20,7 @@ const SimilarSlider = ({ genres }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (genres) dispatch(getSimilar(genres, 10));
+    if (genres) dispatch(getSimilar(genres, 15));
   }, [dispatch, genres]);
 
   const similar = useSelector((state) => state.singleAnime);

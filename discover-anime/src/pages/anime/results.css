@@ -15,12 +15,11 @@
   background-color: var(--nav-color);
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr;
-  grid-template-rows: 0.2fr 2fr 1.2fr 1.2fr;
+  grid-template-rows: 0.2fr 1.2fr 1fr;
 
   grid-template-areas:
     "side header header"
     "side main main"
-    "side content1 content2"
     "side footer footer";
 
   gap: 0.5rem;
@@ -65,16 +64,6 @@
 
 .info-data span {
   font-weight: 500;
-}
-
-.anime-content1 {
-  background-color: orange;
-  grid-area: content1;
-}
-
-.anime-content2 {
-  background-color: green;
-  grid-area: content2;
 }
 
 .anime-footer {

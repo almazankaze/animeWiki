@@ -34,7 +34,7 @@ function SingleAnime() {
   return (
     <div className="anime-page app-container">
       <ImageBanner
-        image={animeState.anime.attributes.coverImage.large}
+        image={animeState.anime.attributes.coverImage}
         title={animeState.anime.attributes.canonicalTitle}
         description={animeState.anime.attributes.synopsis}
       />
@@ -47,11 +47,15 @@ function SingleAnime() {
           <div className="anime-stats">
             <h2 className="info-data">
               Score:
-              <span>{` ${animeState.anime.attributes.averageRating}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.averageRating || "none"
+              }`}</span>
             </h2>
             <h2 className="info-data">
               Popularity:
-              <span>{` #${animeState.anime.attributes.popularityRank}`}</span>
+              <span>{` #${
+                animeState.anime.attributes.popularityRank || "unranked"
+              }`}</span>
             </h2>
             <Link to="/" className="link-btn">
               Watch Trailer
@@ -59,7 +63,7 @@ function SingleAnime() {
           </div>
           <div className="anime-desc">
             <h3>Synopsis</h3>
-            <p>{animeState.anime.attributes.synopsis}</p>
+            <p>{animeState.anime.attributes.synopsis || "unavailable"}</p>
           </div>
         </div>
         <div className="anime-sidebar">
@@ -74,11 +78,15 @@ function SingleAnime() {
             </p>
             <p className="info-data">
               Other Name:
-              <span>{` ${animeState.anime.attributes.titles.en_jp}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.titles.en_jp || "none"
+              }`}</span>
             </p>
             <p className="info-data">
               JP Name:
-              <span>{` ${animeState.anime.attributes.titles.ja_jp}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.titles.ja_jp || "none"
+              }`}</span>
             </p>
             <p className="info-data">
               Type:<span>{` ${animeState.anime.attributes.subtype}`}</span>
@@ -107,7 +115,9 @@ function SingleAnime() {
             </p>
             <p className="info-data">
               Rating:
-              <span>{` ${animeState.anime.attributes.ageRatingGuide}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.ageRatingGuide || "not available"
+              }`}</span>
             </p>
             <p className="info-data">
               Genres:
@@ -115,16 +125,18 @@ function SingleAnime() {
             </p>
             <p className="info-data">
               Score:
-              <span>{` ${animeState.anime.attributes.averageRating}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.averageRating || "none"
+              }`}</span>
             </p>
             <p className="info-data">
               Popularity:
-              <span>{` ${animeState.anime.attributes.popularityRank}`}</span>
+              <span>{` ${
+                animeState.anime.attributes.popularityRank || "unranked"
+              }`}</span>
             </p>
           </div>
         </div>
-        <div className="anime-content1"></div>
-        <div className="anime-content2"></div>
         <div className="anime-footer">
           <h2>Similir Anime</h2>
           <SimilarSlider genres={genres.toString()} />
