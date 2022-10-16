@@ -4,7 +4,8 @@ import {
   FETCH_CURRENT,
   FETCH_ANIME_BY_ID,
   FETCH_ANIME_BY_SEARCH,
-  FETCH_CHARACTERS,
+  FETCH_GENRES,
+  FETCH_SIMILAR,
   LOADING,
   ERROR,
 } from "../constants/actionTypes";
@@ -69,11 +70,23 @@ export const getSingleAnime = (id) => async (dispatch) => {
   }
 };
 
-export const getCharacters = (url) => async (dispatch) => {
+export const getGenres = (url) => async (dispatch) => {
   try {
-    const { data } = await api.fetchCharacters(url);
+    const { data } = await api.fetchGenres(url);
 
-    dispatch({ type: FETCH_CHARACTERS, payload: data });
+    dispatch({ type: FETCH_GENRES, payload: data });
+    return true;
+  } catch (e) {
+    dispatch({ type: ERROR });
+    return false;
+  }
+};
+
+export const getSimilar = (genres, limit) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchSimilar(genres, limit);
+
+    dispatch({ type: FETCH_SIMILAR, payload: data });
   } catch (e) {
     dispatch({ type: ERROR });
   }

@@ -1,6 +1,7 @@
 import {
   FETCH_ANIME_BY_ID,
-  FETCH_CHARACTERS,
+  FETCH_GENRES,
+  FETCH_SIMILAR,
   LOADING,
   ERROR,
 } from "../constants/actionTypes";
@@ -8,7 +9,8 @@ import {
 const singleAnimeReducer = (
   state = {
     anime: [],
-    characters: [],
+    genres: [],
+    similar: [],
     loading: false,
     error: false,
   },
@@ -21,10 +23,16 @@ const singleAnimeReducer = (
         anime: action.payload.data[0],
         error: false,
       };
-    case FETCH_CHARACTERS:
+    case FETCH_GENRES:
       return {
         ...state,
-        characters: action.payload.data,
+        genres: action.payload.data,
+        error: false,
+      };
+    case FETCH_SIMILAR:
+      return {
+        ...state,
+        similar: action.payload.data,
         loading: false,
         error: false,
       };
@@ -32,7 +40,7 @@ const singleAnimeReducer = (
       return {
         ...state,
         anime: [],
-        characters: [],
+        genres: [],
         loading: true,
         error: false,
       };
@@ -40,7 +48,7 @@ const singleAnimeReducer = (
       return {
         ...state,
         anime: [],
-        characters: [],
+        genres: [],
         loading: false,
         error: true,
       };

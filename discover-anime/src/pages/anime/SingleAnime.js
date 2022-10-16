@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleAnime, getCharacters } from "../../actions/anime";
+import { getSingleAnime, getGenres } from "../../actions/anime";
 import Loader from "../../components/loader/Loader";
 import ImageBanner from "../../components/imageBanner/ImageBanner";
+import SimilarSlider from "../../components/slider/SimilarSlider";
 
 function SingleAnime() {
   const { id } = useParams();
@@ -12,17 +13,15 @@ function SingleAnime() {
   useEffect(() => {
     dispatch(getSingleAnime(id)).then((success) => {
       if (success)
-        dispatch(getCharacters(`https://kitsu.io/api/edge/anime/${id}/genres`));
+        dispatch(getGenres(`https://kitsu.io/api/edge/anime/${id}/genres`));
     });
   }, [dispatch, id]);
 
   const animeState = useSelector((state) => state.singleAnime);
 
-  const genres = animeState.characters.slice(0, 2).map((genre) => {
+  const genres = animeState.genres.slice(0, 2).map((genre) => {
     return genre.attributes.slug;
   });
-
-  console.log(animeState);
 
   if (animeState.loading) {
     <div className="anime-page">
@@ -126,7 +125,10 @@ function SingleAnime() {
         </div>
         <div className="anime-content1"></div>
         <div className="anime-content2"></div>
-        <div className="anime-footer"></div>
+        <div className="anime-footer">
+          <h2>Similir Anime</h2>
+          <SimilarSlider genres={genres.toString()} />
+        </div>
       </div>
     </div>
   );

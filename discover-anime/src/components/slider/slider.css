@@ -1,0 +1,20 @@
+.slider-container {
+}
+
+.my-custom-pagination-div {
+  padding: 0 1rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.my-custom-pagination-div span {
+  transform: scale(1.4);
+  background-color: var(--gray-100);
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+
+.swiper-pagination-bullet-active {
+}
