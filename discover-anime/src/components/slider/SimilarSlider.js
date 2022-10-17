@@ -10,11 +10,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./slider.css";
 
 // import required modules
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 const SimilarSlider = ({ genres }) => {
   const dispatch = useDispatch();
@@ -51,13 +52,20 @@ const SimilarSlider = ({ genres }) => {
             return "<span class=" + className + "></span>";
           },
         }}
-        modules={[Pagination]}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        modules={[Pagination, Navigation]}
         breakpoints={{
-          600: {
+          380: {
             slidesPerView: 2,
           },
-          900: {
+          600: {
             slidesPerView: 3,
+          },
+          800: {
+            slidesPerView: 4,
           },
           1200: {
             slidesPerView: 5,
@@ -70,6 +78,8 @@ const SimilarSlider = ({ genres }) => {
             <Card anime={card} />
           </SwiperSlide>
         ))}
+        <div className="btn-slide swiper-button-next"></div>
+        <div className="btn-slide swiper-button-prev"></div>
       </Swiper>
     </div>
   );

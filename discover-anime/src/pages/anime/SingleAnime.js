@@ -45,13 +45,13 @@ function SingleAnime() {
         </div>
         <div className="anime-main">
           <div className="anime-stats">
-            <h2 className="info-data">
+            <h2 className="info-data desk-data">
               Score:
               <span>{` ${
                 animeState.anime.attributes.averageRating || "none"
               }`}</span>
             </h2>
-            <h2 className="info-data">
+            <h2 className="info-data desk-data">
               Popularity:
               <span>{` #${
                 animeState.anime.attributes.popularityRank || "unranked"
@@ -62,7 +62,7 @@ function SingleAnime() {
             </Link>
           </div>
           <div className="anime-desc">
-            <h3>Synopsis</h3>
+            <h2>Synopsis</h2>
             <p>{animeState.anime.attributes.synopsis || "unavailable"}</p>
           </div>
         </div>
