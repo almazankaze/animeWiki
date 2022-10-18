@@ -37,6 +37,8 @@ function Trending() {
 
   const current = useSelector((state) => state.current);
 
+  if (current.status >= 500) navigate("/error");
+
   return (
     <div className="results-page app-container">
       <h2 className="title-text-color">Trending Anime</h2>

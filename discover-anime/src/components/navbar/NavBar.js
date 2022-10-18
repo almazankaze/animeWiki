@@ -13,7 +13,8 @@ function NavBar() {
 
   const location = useLocation();
 
-  if (location.pathname === "/notfound") return null;
+  if (location.pathname === "/notfound" || location.pathname === "/error")
+    return null;
 
   return (
     <div className="navbar">

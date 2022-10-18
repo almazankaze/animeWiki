@@ -37,6 +37,8 @@ function Upcoming() {
 
   const upcoming = useSelector((state) => state.upcoming);
 
+  if (upcoming.status >= 500) navigate("/error");
+
   return (
     <div className="results-page app-container">
       <h2 className="title-text-color">Upcoming Anime</h2>

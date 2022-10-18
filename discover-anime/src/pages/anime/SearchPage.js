@@ -42,6 +42,8 @@ function SearchPage() {
 
   const results = useSelector((state) => state.anime);
 
+  if (results.status >= 500) navigate("/error");
+
   return (
     <div className="results-page app-container">
       <Search />

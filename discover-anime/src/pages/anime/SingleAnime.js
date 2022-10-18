@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleAnime, getGenres } from "../../actions/anime";
 import Loader from "../../components/loader/Loader";
@@ -9,13 +9,16 @@ import SimilarSlider from "../../components/slider/SimilarSlider";
 function SingleAnime() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getSingleAnime(id)).then((success) => {
-      if (success)
+    dispatch(getSingleAnime(id)).then((status) => {
+      if (status === 200)
         dispatch(getGenres(`https://kitsu.io/api/edge/anime/${id}/genres`));
+      else if (status === 404) navigate("/notfound");
+      else navigate("/error");
     });
-  }, [dispatch, id]);
+  }, [dispatch, id, navigate]);
 
   const animeState = useSelector((state) => state.singleAnime);
 
@@ -37,6 +40,7 @@ function SingleAnime() {
         image={animeState.anime.attributes.coverImage}
         title={animeState.anime.attributes.canonicalTitle}
         description={animeState.anime.attributes.synopsis}
+        youtubeId={animeState.anime.attributes.youtubeVideoId}
       />
 
       <div className="anime-info-container">
@@ -57,9 +61,14 @@ function SingleAnime() {
                 animeState.anime.attributes.popularityRank || "unranked"
               }`}</span>
             </h2>
-            <Link to="/" className="link-btn">
+            <a
+              href={`https://www.youtube.com/watch?v=${animeState.anime.attributes.youtubeVideoId}`}
+              className="link-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Watch Trailer
-            </Link>
+            </a>
           </div>
           <div className="anime-desc">
             <h2>Synopsis</h2>

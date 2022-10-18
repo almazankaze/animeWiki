@@ -16,7 +16,8 @@ function Footer() {
   const location = useLocation();
   const footerRef = useRef(null);
 
-  if (location.pathname === "/notfound") return null;
+  if (location.pathname === "/notfound" || location.pathname === "/error")
+    return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,7 +1,6 @@
 import "./imageBanner.css";
-import { Link } from "react-router-dom";
 
-function ImageBanner({ image, title, description }) {
+function ImageBanner({ image, title, description, youtubeId }) {
   if (image)
     return (
       <div className="anime-image-container">
@@ -12,9 +11,14 @@ function ImageBanner({ image, title, description }) {
           <h2 className="anime-image-title">{title}</h2>
           <h4 className="anime-synopsis">{description}</h4>
         </div>
-        <Link to="/" className="anime-link btn link-btn">
+        <a
+          href={`https://www.youtube.com/watch?v=${youtubeId}`}
+          className="anime-link btn link-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Trailer
-        </Link>
+        </a>
       </div>
     );
 }

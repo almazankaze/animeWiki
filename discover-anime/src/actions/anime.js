@@ -19,7 +19,7 @@ export const getUpcoming = (limit, offset) => async (dispatch) => {
 
     dispatch({ type: FETCH_UPCOMING, payload: data });
   } catch (e) {
-    dispatch({ type: ERROR });
+    dispatch({ type: ERROR, payload: e.response.status });
   }
 };
 
@@ -30,7 +30,7 @@ export const getCurrent = (limit, offset) => async (dispatch) => {
 
     dispatch({ type: FETCH_CURRENT, payload: data });
   } catch (e) {
-    dispatch({ type: ERROR });
+    dispatch({ type: ERROR, payload: e.response.status });
   }
 };
 
@@ -41,7 +41,7 @@ export const getAnime = (limit, offset) => async (dispatch) => {
 
     dispatch({ type: FETCH_ANIME, payload: data });
   } catch (e) {
-    dispatch({ type: ERROR });
+    dispatch({ type: ERROR, payload: e.response.status });
   }
 };
 
@@ -62,11 +62,15 @@ export const getSingleAnime = (id) => async (dispatch) => {
     dispatch({ type: LOADING });
     const { data } = await api.fetchAnimeById(id);
 
+    if (data.data.length === 0) {
+      return 404;
+    }
+
     dispatch({ type: FETCH_ANIME_BY_ID, payload: data });
-    return true;
+    return 200;
   } catch (e) {
     dispatch({ type: ERROR });
-    return false;
+    return e.response.status;
   }
 };
 
@@ -75,10 +79,10 @@ export const getGenres = (url) => async (dispatch) => {
     const { data } = await api.fetchGenres(url);
 
     dispatch({ type: FETCH_GENRES, payload: data });
-    return true;
+    return 200;
   } catch (e) {
     dispatch({ type: ERROR });
-    return false;
+    return e.response.status;
   }
 };
 

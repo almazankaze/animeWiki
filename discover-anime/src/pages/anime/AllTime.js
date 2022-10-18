@@ -37,6 +37,8 @@ function AllTime() {
 
   const popular = useSelector((state) => state.anime);
 
+  if (popular.status >= 500) navigate("/error");
+
   return (
     <div className="results-page app-container">
       <h2 className="title-text-color">All Time Popular Anime</h2>

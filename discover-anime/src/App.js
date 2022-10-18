@@ -10,6 +10,7 @@ import Trending from "./pages/anime/Trending";
 import Upcoming from "./pages/anime/Upcoming";
 import AllTime from "./pages/anime/AllTime";
 import NotFound from "./pages/error/NotFound";
+import Error from "./pages/error/Error";
 import About from "./pages/about/About";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/anime/popular" element={<AllTime />} />
           <Route path="/anime/infopage/:id" element={<SingleAnime />} />
           <Route path="/about" element={<About />} />
+          <Route path="/error" element={<Error />} />
           <Route path="*" element={<Navigate to="/notfound" />} />
           <Route path="/notfound" element={<NotFound />} />
         </Routes>

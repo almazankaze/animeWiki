@@ -21,7 +21,7 @@ const SimilarSlider = ({ genres }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (genres) dispatch(getSimilar(genres, 15));
+    if (genres) dispatch(getSimilar(genres, 16));
   }, [dispatch, genres]);
 
   const similar = useSelector((state) => state.singleAnime);
@@ -33,7 +33,7 @@ const SimilarSlider = ({ genres }) => {
       </div>
     );
 
-  if (similar.similar.length <= 0)
+  if (similar.similar.length <= 1 || similar.error)
     return (
       <div className="slider-container">
         <h2>No results found</h2>
@@ -73,7 +73,7 @@ const SimilarSlider = ({ genres }) => {
         }}
         className="mySwiper"
       >
-        {similar.similar.map((card) => (
+        {similar.similar.slice(1).map((card) => (
           <SwiperSlide key={card.id}>
             <Card anime={card} />
           </SwiperSlide>
