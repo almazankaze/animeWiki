@@ -21,7 +21,7 @@ const SimilarSlider = ({ genres }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (genres) dispatch(getSimilar(genres, 16));
+    dispatch(getSimilar(genres, 16));
   }, [dispatch, genres]);
 
   const similar = useSelector((state) => state.singleAnime);
@@ -33,7 +33,7 @@ const SimilarSlider = ({ genres }) => {
       </div>
     );
 
-  if (similar.similar.length <= 1 || similar.error)
+  if (similar.similar.length <= 1 || similar.error || genres === "")
     return (
       <div className="slider-container">
         <h2>No results found</h2>
