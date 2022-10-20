@@ -79,11 +79,7 @@ export const getGenres = (url) => async (dispatch) => {
     const { data } = await api.fetchGenres(url);
 
     dispatch({ type: FETCH_GENRES, payload: data });
-    return 200;
-  } catch (e) {
-    dispatch({ type: ERROR });
-    return e.response.status;
-  }
+  } catch (e) {}
 };
 
 export const getSimilar = (genres, limit) => async (dispatch) => {
