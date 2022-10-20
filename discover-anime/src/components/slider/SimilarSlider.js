@@ -33,7 +33,7 @@ const SimilarSlider = ({ genres }) => {
       </div>
     );
 
-  if (similar.similar.length <= 1 || similar.error || genres === "")
+  if (similar.similar.length <= 1 || similar.error || genres.length === 0)
     return (
       <div className="slider-container">
         <h2>No results found</h2>
